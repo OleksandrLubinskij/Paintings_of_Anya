@@ -22,7 +22,6 @@ body {
 }
 
 .header {
-    grid-area: header;
     background-color: rgb(238, 195, 178);
     border: 2px solid black;
     margin-bottom: 1.3em;
@@ -32,7 +31,6 @@ body {
 }
 
 .menu {
-    grid-area: menu;
     margin-right: 1.5em;
 }
 
@@ -53,12 +51,8 @@ body {
     transform: scale(0.9);
     cursor: pointer;
 }
-.content {
-    grid-area: main;
-}
 
 .footer {
-    grid-area: footer;
     margin-top: 1.5em;
     display: flex;
     justify-content: center;
@@ -70,4 +64,39 @@ body {
     min-width: 200px;
     border-bottom: 2px solid black;
     padding: 0.3em;
+}
+
+@media only screen and (max-width: 650px) {
+    .header { grid-area: 1 / span 6;}
+    .menu { grid-area: 2 / span 6;}
+    .content { grid-area: 3 / span 6;}
+    .footer { grid-area: 4 / span 6;}
+}
+
+@media only screen and (min-width: 650px) {
+    .header { grid-area: 1 / span 6;}
+    .menu { 
+        grid-area: 2 / span 6;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .content { grid-area: 3 / span 6;}
+    .footer { grid-area: 4 / span 6;}
+}
+
+@media only screen and (min-width: 1000px) {
+    .header {
+        grid-area: header;
+    }
+    .menu {
+        grid-area: menu;
+    }
+    .content {
+        grid-area: main;
+    }
+    .footer {
+        grid-area: footer;
+    }
 }
