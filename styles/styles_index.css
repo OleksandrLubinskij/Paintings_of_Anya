@@ -67,6 +67,9 @@ body {
 }
 
 @media only screen and (max-width: 650px) {
+    .main_container {
+        max-width: 70vw;
+    }
     .header { grid-area: 1 / span 6;}
     .menu { grid-area: 2 / span 6;}
     .content { grid-area: 3 / span 6;}
